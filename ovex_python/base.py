@@ -19,8 +19,7 @@ ARCH = platform.machine()
 
 
 class BaseClient:
-    def __init__(self, base_url='', timeout=0,
-                 api_key_id=''):
+    def __init__(self, api_key_id='', base_url='', timeout=0):
         """
         :type base_url: str
         :type timeout: float
@@ -73,10 +72,9 @@ class BaseClient:
             params = None
         headers = {}
         headers['User-Agent'] = self.make_user_agent()
-        headers['Authorization'] = f'Bearer {self.api_key_id}'
-        args = dict(timeout=self.timeout, params=params, headers=headers)
         if auth:
-            args['auth'] = (self.api_key_id)
+            headers['Authorization'] = f'Bearer {self.api_key_id}'
+        args = dict(timeout=self.timeout, params=params, headers=headers)
         url = self.make_url(path, params)
         res = self.session.request(method, url, **args)
         try:
