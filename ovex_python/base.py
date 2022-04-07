@@ -56,7 +56,7 @@ class BaseClient:
             timeout = DEFAULT_TIMEOUT
         self.timeout = timeout
 
-    def do(self, method, path, req=None, auth=False):
+    def do(self, method, path, req=None, auth=False, timeout_override=None):
         """Performs an API request and returns the response.
 
         TODO: Handle 429s
@@ -74,7 +74,7 @@ class BaseClient:
         headers['User-Agent'] = self.make_user_agent()
         if auth:
             headers['Authorization'] = f'Bearer {self.api_key_id}'
-        args = dict(timeout=self.timeout, params=params, headers=headers)
+        args = dict(timeout=self.timeout if timeout_override==None else timeout_override, params=params, headers=headers)
         url = self.make_url(path, params)
         res = self.session.request(method, url, **args)
         try:
