@@ -12,7 +12,7 @@ class Client(BaseClient):
 
       c = Client(api_key_id='key_id')
       try:
-        res = c.get_ticker(pair='XBTZAR')
+        res = c.get_accounts()
         print res
       except Exception as e:
         print e
