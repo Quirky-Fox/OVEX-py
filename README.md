@@ -19,7 +19,7 @@ Where optional parameters can be passed as follows:
 
 | Parameter   | Description      | Default |
 |--------------|------------------|---------|
-| api_key_id | Your API key created on the OVEX website | Required |
+| api_key_id | Your API key created on the OVEX website | Required for authenticated calls |
 | base_url | The API host URL | https://www.ovex.io/api/v2 |
 | timeout | The maximum time to wait for requests | 10 (s) |
 
@@ -40,7 +40,7 @@ Where optional parameters can be passed as follows:
 
 ### Request a quote
 
-    o.get_quote_rfq(to_amount=1,market='btczar', side='buy')
+    o.get_quote_rfq(to_amount=1, market='btczar', side='buy')
 
 **Returns**: dictionary containing quote information including a token
 
@@ -58,7 +58,8 @@ https://github.com/grantstephens/pyluno
 # To Do
 
 -   Tests for some of the endpoints needing dynamic reponses
--   Tests for the rate limiter
+-   Add in a rate limiter
+-   Add in processing layer to make results more user-friendly
 
 
 # Contribute

@@ -5,6 +5,7 @@ setup(
     version='0.0.1',    
     description='A package to interact with OVEX API',
     url='https://github.com/Quirky-Fox/OVEX-py',
+    download_url = 'https://github.com/Quirky-Fox/OVEX-py/archive/refs/tags/v0.0.1.tar.gz',
     author='Duncan Andrew',
     author_email='duncan@lumina-x.com',
     license='MIT',
