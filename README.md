@@ -3,12 +3,12 @@ OVEX Python API.
 
 # Installation
 
-    pip install ovex_py
+    pip install ovex-py
 
 
 # How to use it
 
-See the tests for detailed usage examples, but basically:
+Most functions should have useful help text, but essentially:
 
 ## API object creation
 
@@ -57,7 +57,6 @@ https://github.com/grantstephens/pyluno
 
 # To Do
 
--   Tests for some of the endpoints needing dynamic reponses
 -   Add in a rate limiter
 -   Add in processing layer to make results more user-friendly
 
@@ -66,4 +65,5 @@ https://github.com/grantstephens/pyluno
 
 -  Fork it
 -  Contribute
--  Test and update
+-  Give feedback
+-  Start again
